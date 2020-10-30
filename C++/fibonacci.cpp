@@ -1,22 +1,31 @@
-#include <bits/stdc++.h>
+#include<iostream>
+ 
 using namespace std;
-
-int main(int argc, char const *argv[]) {
-    int n;
-    cout << "Enter the number of digits to print: ";
-    cin >> n;
-    long long a, b, c;
-    a = 0;
-    b = 1;
-    n -= 2;
-    cout << a << " " << b << " ";
-    while(n--) {
-        c = a + b;
-        cout << c << " ";
-        a = b;
-        b = c;
+ 
+int fibonacci(int n)
+{
+    if((n==1)||(n==0))
+    {
+        return(n);
     }
-    cout << endl;
-    
+    else
+    {
+        return(fibonacci(n-1)+fibonacci(n-2));
+    }
+}
+ 
+int main()
+{
+    int n,i=0;
+    cout<<"Input the number of terms for Fibonacci Series:";
+    cin>>n;
+    cout<<"\nFibonacci Series is as follows\n";
+ 
+    while(i<n)
+    {
+        cout<<" "<<fibonacci(i);
+        i++;
+    }
+ 
     return 0;
 }
